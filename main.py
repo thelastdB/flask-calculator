@@ -6,7 +6,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 from model import SavedTotal
 
 app = Flask(__name__)
-# app.secret_key = b'\xedD7\xf3>8F\x06\x1e\x99\xa5\xd2Zt\xd6J6\x05\xdb|\xb1\x0fF\x14'
+# app.secret_key = b'\xedD7\xf3>8F\x06\x1e\x99\xa5\xd2Zt\xd6J6\x05\xdb\xb1\x0fF\x14'
 app.secret_key = os.environ.get('SECRET_KEY').encode()
 
 @app.route('/add', methods=['GET', 'POST'])
@@ -48,6 +48,3 @@ def retrieve():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 4000))
     app.run(host='localhost', port=port)
-
-
-# next step: deploying to Heroku
